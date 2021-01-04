@@ -7,6 +7,10 @@ import { HomeComponent } from '@home/home.component';
 import { ProductoModule } from '@producto/producto.module';
 import { CoreModule } from '@core/core.module';
 import { CookieService } from 'ngx-cookie-service';
+//import { UsuarioComponent } from './feature/usuario/components/usuario/usuario.component';
+//import { CrearUsuarioComponent } from './feature/usuario/components/crear-usuario/crear-usuario.component';
+import { UsuarioModule } from './feature/usuario/usuario.module';
+
 
 
 
@@ -20,7 +24,9 @@ import { CookieService } from 'ngx-cookie-service';
     BrowserModule,
     AppRoutingModule,
     ProductoModule,
+    UsuarioModule,
     CoreModule
+    
   ],
   providers: [CookieService],
     bootstrap: [AppComponent],
