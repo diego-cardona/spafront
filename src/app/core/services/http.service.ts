@@ -71,4 +71,13 @@ export class HttpService {
 
     return this.http.get<T>(serviceUrl, options);
   }
+
+
+
+  public doGetSingle<T>(serviceUrl: string): Observable<T> {
+    return this.http.get<T>(serviceUrl);
+  }
+
+
+
 }

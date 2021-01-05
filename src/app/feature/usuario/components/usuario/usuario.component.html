@@ -1,1 +1,8 @@
-<p>usuario works!</p>
+<nav>
+    <a id="linkUsuario" routerLink="./" routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }">Usuario</a>
+    <a id="linkCrearUsuario" routerLink="./crear" routerLinkActive="active">Crear usuario</a>
+    <a id="linkEliminarUsuario" routerLink="./borrar" routerLinkActive="active">Eliminar Usuario</a>
+    <a id="linkListarUsuario" routerLink="./listar" routerLinkActive="active">listar Usuarios</a>
+  </nav>
+  <router-outlet></router-outlet>

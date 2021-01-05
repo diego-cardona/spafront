@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Usuario } from '../../shared/model/usuario';
+import {UsuarioService } from '../../shared/service/usuario.service'
 
 @Component({
   selector: 'app-listar-usuario',
@@ -6,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listar-usuario.component.css']
 })
 export class ListarUsuarioComponent implements OnInit {
+  listaUsuarios: Observable<Usuario[]>;
 
-  constructor() { }
+  constructor(protected usuarioService: UsuarioService) { }
 
   ngOnInit(): void {
+    this.listaUsuarios = this.usuarioService.consultarUsuarios();
   }
 
 }
