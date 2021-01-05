@@ -3,10 +3,10 @@
 <!-- <button type="button" onclick="consultar()" class="btn btn-secondary">Listar</button> -->
 
 
-<div class="h-100">
+<div class="center-h center-v">
     <h2>Usuarios</h2>
     <h3>lista de usuarios</h3>
-    <div id="usuarios">
+    <div id="usuarios" class="center-h center-v">
     <ul class="usuarios">
         <li *ngFor="let item of listaUsuarios | async">
         <span>{{item.id}}</span> {{item.nombre}} 
