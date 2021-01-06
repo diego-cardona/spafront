@@ -1,1 +1,49 @@
-<p>crear-usuario works!</p>
+<h1>Crear Usuario</h1>
+<h3>Para acceder a los servicios del spa, es necesario registrarse primero</h3>
+<form [formGroup]="usuarioForm" (ngSubmit)="crear()">
+  
+  <div class="row">
+    <div class="col-sm-2">
+      <label>Id:</label>
+    </div>
+    <div class="col-sm-4">
+      <input validar type="number" id="id" name="id" placeholder="Id Usuario" class="form-control"
+        formControlName="id">
+    </div>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-sm-2">
+      <label>Nombre:</label>
+    </div>
+    <div class="col-sm-4">
+      <input validar type="text" id="nombre" name="nombre" placeholder="nombre"
+        class="form-control" formControlName="nombre">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-2">
+      <label>clave:</label>
+    </div>
+    <div class="col-sm-4">
+      <input validar type="text" id="clave" name="clave" placeholder="Identificación"
+        class="form-control" formControlName="clave">
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-2">
+      <label>fecha:</label>
+    </div>
+    <div class="col-sm-4">
+      <input validar type="text" id="fecha" name="fecha" placeholder="fecha"
+        class="form-control" formControlName="fecha">
+    </div>
+  </div>
+
+  <button type="submit">Registrarse</button>
+
+</form>

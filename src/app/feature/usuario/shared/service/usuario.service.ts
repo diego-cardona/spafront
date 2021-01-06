@@ -8,6 +8,8 @@ import { Usuario } from '../model/usuario';
 @Injectable()
 export class UsuarioService {
 
+  resultData;
+
   private consultaUsuariosUrl = "http://localhost:8080/usuarios";
   constructor(protected http: HttpService) {}
 
@@ -20,9 +22,25 @@ export class UsuarioService {
   }
 
   public guardar(usuario: Usuario) {
+    return this.http.doPost<Usuario, boolean>(this.consultaUsuariosUrl, usuario,
+                                                this.http.optsName('Crear Usuario'));
+  }
+
+  /* public guardarUsuarios(usuario :Usuario):{
+    return this.http.doPostSingle<Usuario>(this.consultaUsuariosUrl);
+  } */
+
+
+  /* public guardar(usuario: Usuario) {
     return this.http.doPost<Usuario, boolean>(`${environment.endpoint}/usuarios`, usuario,
                                                 this.http.optsName('crear/actualizar usuarios'));
-  }
+  } */
+
+    public guardarUsuario(usuario: Usuario) {
+    return this.http.doPostSingle<Usuario>(this.consultaUsuariosUrl, usuario).subscribe(
+      data =>{ this.resultData = data}
+    );
+  } 
 
   public eliminar(usuario: Usuario) {
     return this.http.doDelete<boolean>(`${environment.endpoint}/usuarios/${usuario.id}`,
