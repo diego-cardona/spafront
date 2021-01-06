@@ -79,20 +79,12 @@ export class HttpService {
   }
 
   public doPostSingle<T>(serviceUrl: string, body: T){
-    /* var config = {
-      headers : {
-          'Content-Type': 'application/json;'
-      }
-    } */
-    
-    /* var usuario = {
-      "id": 1111,
-      "nombre": "peterete",
-      "clave": "4680",
-      "fecha": "2020-12-16 00:00:00"
-    } */
     body = body;
     return this.http.post(serviceUrl,body);
+  }
+
+  public doDeleteSingle<R>(serviceUrl: string): Observable<R> {
+    return this.http.delete<R>(serviceUrl);
   }
 
   

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { CrearUsuarioComponent } from './components/crear-usuario/crear-usuario.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { ListarUsuarioComponent} from './components/listar-usuario/listar-usuario.component'
+import { EliminarUsuarioComponent } from './components/eliminar-usuario/eliminar-usuario.component';
 
 
 const routes: Routes = [
@@ -13,18 +14,16 @@ const routes: Routes = [
       {
         path: 'crear',
         component: CrearUsuarioComponent
-      }
+      },
       
-       ,{
+      {
         path: 'listar',
         component: ListarUsuarioComponent
-      }
-
-      /*
-      ,{
+      },
+      {
         path: 'borrar',
-        component: BorrarProductoComponent
-      } */
+        component: EliminarUsuarioComponent
+      }
       
     ]
   }

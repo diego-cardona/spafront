@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '@core-service/http.service';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
 import { Usuario } from '../model/usuario';
 
 
@@ -36,6 +35,10 @@ export class UsuarioService {
                                                 this.http.optsName('crear/actualizar usuarios'));
   } */
 
+  /* public eliminar(usuario: Usuario) {
+    return this.http.doDelete<boolean>(`${environment.endpoint}/usuarios/${usuario.id}`,
+                                                 this.http.optsName('eliminar usuarios'));
+  } */
     public guardarUsuario(usuario: Usuario) {
     return this.http.doPostSingle<Usuario>(this.consultaUsuariosUrl, usuario).subscribe(
       data =>{ this.resultData = data}
@@ -43,7 +46,9 @@ export class UsuarioService {
   } 
 
   public eliminar(usuario: Usuario) {
-    return this.http.doDelete<boolean>(`${environment.endpoint}/usuarios/${usuario.id}`,
-                                                 this.http.optsName('eliminar usuarios'));
+    return this.http.doDeleteSingle<boolean>(`${this.consultaUsuariosUrl}/${usuario.id}`).subscribe(
+      data =>{ this.resultData = data}
+    );
   }
+  
 }

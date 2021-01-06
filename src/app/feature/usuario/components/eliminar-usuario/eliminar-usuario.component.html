@@ -1,0 +1,18 @@
+<h1>Eliminar Usuario</h1>
+<h3>Para eliminar un usuario del spa, solo es necesario el id</h3>
+<form [formGroup]="EliminarusuarioForm" (ngSubmit)="eliminar()">
+  
+  <div class="row">
+    <div class="col-sm-2">
+      <label>Id:</label>
+    </div>
+    <div class="col-sm-4">
+      <input validar type="number" id="id" name="id" placeholder="Id Usuario" class="form-control"
+        formControlName="id">
+    </div>
+  </div>
+  
+  
+  <button type="submit">Eliminar</button>
+
+</form>

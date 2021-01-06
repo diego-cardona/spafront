@@ -21,7 +21,7 @@ export class CrearUsuarioComponent implements OnInit {
   crear(){
     this.idUsuario = this.usuarioService.guardarUsuario(this.usuarioForm.value);
 
-    if(this.idUsuario > 20){
+    if(this.idUsuario > 0){
       console.log("se insertó usuario con id" || this.idUsuario)
     }
   }
